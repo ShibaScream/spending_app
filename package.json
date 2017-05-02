@@ -1,0 +1,23 @@
+{
+  "name": "spendingApp",
+  "version": "1.0.0",
+  "description": "This is for the Capital One Investing Coding Challenge",
+  "main": "index.js",
+  "repository": "https://github.com/ShibaScream/spending_app.git",
+  "author": "Dan Peters <daniel.r.peters@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "http-errors": "^1.6.1",
+    "jsonwebtoken": "^7.4.0",
+    "morgan": "^1.8.1",
+    "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.3.0"
+  }
+}
