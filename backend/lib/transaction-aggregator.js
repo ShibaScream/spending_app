@@ -53,8 +53,10 @@ module.exports = (transactionArray = []) => {
 
       })
 
-      let dates = Object.keys(aggregate.monthlyTotals)
+      // TODO: POSSIBLY MOVE AVERAGING TO FRONTEND?? 
+      //       WOULD ALLOW FOR CALCULATING ON THE FLY WITH FILTERING
       // TODO: MOVE DOLLAR_CONVERSION TO FRONTEND CODE
+      let dates = Object.keys(aggregate.monthlyTotals)
       dates.forEach( date => {
         let month = aggregate.monthlyTotals[date]
         aggregate.average.income += month.income
