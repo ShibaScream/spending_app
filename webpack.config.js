@@ -34,7 +34,7 @@ module.exports = {
       template: `${__dirname}/frontend/app/index.html`,
     }),
     new webpack.DefinePlugin({
-      __API_URL__: JSON.stringify(process.env.API_URL),
+      __API_URL__: JSON.stringify(`${process.env.API_URL}:${process.env.BACKEND_PORT}`),
       __DEBUG__: JSON.stringify(!production)
     })
   ]
