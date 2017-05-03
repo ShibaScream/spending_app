@@ -7,7 +7,10 @@
   "author": "Dan Peters <daniel.r.peters@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "test-be": "mocha backend/test"
+    "test-be": "mocha backend/test",
+    "build": "webpack --display-error-details",
+    "watch": "webpack-dev-server --inline --hot",
+    "start": "node backend/server.js"
   },
   "dependencies": {
     "angular": "^1.6.4",
