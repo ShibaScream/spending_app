@@ -2,9 +2,10 @@
 
 const DOLLAR_CONVERSION = Math.pow(10, 4)
 
-module.exports = (transactionArray) => {
+module.exports = (transactionArray = []) => {
   return new Promise( (resolve, reject) => {
     try {
+      if (transactionArray.length === 0) throw Error('no transactions')
       let aggregate = {
         average: {
           income: 0,
