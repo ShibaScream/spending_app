@@ -1,45 +1,85 @@
 'use strict'
 
+const DOLLAR_CONVERSION = Math.pow(10, 4)
+
 module.exports = (transactionArray) => {
   return new Promise( (resolve, reject) => {
-    let aggregate = {
-      average: {
-        income: 0,
-        spent: 0
-      },
-      monthlyTotals: {}
-    }
-
-    transactionArray.forEach( transaction => {
-      let date = transaction['transaction-time'].slice(0,7)
-      if (!aggregate.monthlyTotals.hasOwnProperty(date)) {
-        aggregate.monthlyTotals[date] = {
+    try {
+      let aggregate = {
+        average: {
           income: 0,
           spent: 0
+        },
+        monthlyTotals: {}
+      }
+
+      transactionArray.forEach( transaction => {
+        let date = transaction['transaction-time'].slice(0,7)
+        if (!aggregate.monthlyTotals.hasOwnProperty(date)) {
+          aggregate.monthlyTotals[date] = {
+            income: 0,
+            spent: 0,
+            totalsByCategory: {
+              creditCard: {
+                debit: 0,
+                credit: 0
+              },
+              donuts: 0
+            }
+          }
         }
-      }
-      if (transaction.amount > 0) {
-        aggregate.monthlyTotals[date].income += transaction.amount
-      } else {
-        aggregate.monthlyTotals[date].spent += transaction.amount
-      }
-    })
 
-    let dates = Object.keys(aggregate.monthlyTotals)
+        let month = aggregate.monthlyTotals[date]
 
-    dates.forEach( date => {
-      let currentDate = aggregate.monthlyTotals[date]
-      aggregate.average.income += currentDate.income
-      aggregate.average.spent += currentDate.spent
-      currentDate.income /= Math.pow(10, 4)
-      currentDate.spent /= Math.pow(10, 4)
-    })
+        if (transaction.amount > 0) {
+          month.income += transaction.amount
 
-    console.log('sums:', aggregate.average)
+          if (isCCPayment(transaction.merchant)) {
+            month.totalsByCategory.creditCard.credit += transaction.amount
+          }
 
-    aggregate.average.income = (aggregate.average.income / dates.length) / Math.pow(10, 4)
-    aggregate.average.spent = (aggregate.average.spent / dates.length) / Math.pow(10, 4)
+        } else {
+          month.spent += transaction.amount
 
-    resolve(aggregate)
+          if (isCCPayment(transaction.merchant)) {
+            month.totalsByCategory.creditCard.debit += transaction.amount
+          }
+
+          if (isDonutPayment(transaction.merchant)) {
+            month.totalsByCategory.donuts += transaction.amount
+          }
+        }
+
+      })
+
+      let dates = Object.keys(aggregate.monthlyTotals)
+      // TODO: MOVE DOLLAR_CONVERSION TO FRONTEND CODE
+      dates.forEach( date => {
+        let month = aggregate.monthlyTotals[date]
+        aggregate.average.income += month.income
+        aggregate.average.spent += month.spent
+        month.income /= DOLLAR_CONVERSION
+        month.spent /= DOLLAR_CONVERSION
+        month.totalsByCategory.creditCard.debit /= DOLLAR_CONVERSION
+        month.totalsByCategory.creditCard.credit /= DOLLAR_CONVERSION
+        month.totalsByCategory.donuts /= DOLLAR_CONVERSION
+      })
+
+      aggregate.average.income = (aggregate.average.income / dates.length) / DOLLAR_CONVERSION
+      aggregate.average.spent = (aggregate.average.spent / dates.length) / DOLLAR_CONVERSION
+
+      return resolve(aggregate)
+    } catch (error) {
+      return reject(error)
+    }
   })
+
+  function isCCPayment (merchant) {
+    return merchant === 'CC Payment' || merchant === 'Credit Card Payment'
+  }
+
+  function isDonutPayment (merchant) {
+    return merchant === 'Dunkin #336784' || merchant === 'Krispy Kreme Donuts'
+  }
+
 }

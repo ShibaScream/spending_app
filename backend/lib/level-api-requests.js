@@ -1,36 +1,62 @@
 'use strict'
 
 const request = require('superagent')
-const createError = require('http-errors')
 
 const URL = process.env.LEVEL_URL
-const UID = Number(process.env.USER_ID)
-const TOKEN = process.env.AUTH_TOKEN
 const API_TOKEN = process.env.API_TOKEN
 
-function levelApiRequests () {
+module.exports.getOverview = (user) => {
   return new Promise((resolve, reject) => {
     request
       .post(`${URL}/get-all-transactions`)
       .set('Content-Type', 'application/json')
       .set('Accept', 'application/json')
-      .send({args: {
-	       uid: UID,
-         token: TOKEN,
-         'api-token': API_TOKEN,
-         'json-strict-mode': false,
-         'json-verbose-response': false
-       }
+      .send({
+        args: {
+          uid: user.id,
+          token: user.token,
+          'api-token': API_TOKEN,
+          'json-strict-mode': false,
+          'json-verbose-response': false
+        }
       })
       .end(function (err, response) {
         if (err) {
-          console.error('we hit an error in the api request')
           reject(err)
         }
-        console.log('api request success!')
         resolve(response)
       })
   })
 }
 
-module.exports = levelApiRequests
+module.exports.getProjected = (user) => {
+  let today = new Date()
+  let year = today.getFullYear()
+  // CAREFUL!! Month is zero-indexed because...javascript
+  let month = today.getMonth() + 1
+
+  return new Promise((resolve, reject) => {
+    request
+      .post(`${URL}/projected-transactions-for-month`)
+      .set('Content-Type', 'application/json')
+      .set('Accept', 'application/json')
+      .send({
+        args: {
+          uid: user.id,
+          token: user.token,
+          'api-token': API_TOKEN,
+          'json-strict-mode': false,
+          'json-verbose-response': false
+        },
+        year: year,
+        month: month
+      })
+      .end(function (err, response) {
+        if (err) {
+          reject(err)
+        }
+        resolve(response)
+      })
+
+  })
+}

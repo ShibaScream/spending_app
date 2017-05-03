@@ -15,7 +15,8 @@ const PORT = process.env.BACKEND_PORT
 require('./routes/api-routes')(router)
 require('./routes/auth-routes')(router)
 
-app.use(router)
+app.use(Express.static(__dirname + '/../frontend/public'))
+app.use('/', router)
 app.use(httpErrors)
 
 if(require.main === module) {
