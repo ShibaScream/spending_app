@@ -6,6 +6,9 @@
   "repository": "https://github.com/ShibaScream/spending_app.git",
   "author": "Dan Peters <daniel.r.peters@icloud.com>",
   "license": "MIT",
+  "scripts": {
+    "test-be": "mocha backend/test"
+  },
   "dependencies": {
     "angular": "^1.6.4",
     "angular-ui-router": "^0.4.2",
