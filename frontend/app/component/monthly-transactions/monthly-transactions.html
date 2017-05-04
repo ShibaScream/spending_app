@@ -1,0 +1,25 @@
+<section>
+  <h3>Monthly Transactions View</h3>
+  <div class="row header">
+    <div class="column"><h4>Month</h4></div>
+    <div class="column"><h4>Income</h4></div>
+    <div class="column"><h4>Spent</h4></div>
+    <div class="column"><h4>Balance</h4></div>
+  </div>
+  <div
+    ng-repeat="month in monthlyTransactionsCtrl.transactions.monthsArray | orderBy : 'date' : true"
+    class="row">
+    <div class="column">
+      {{ month.date }}
+    </div>
+    <div class="column">
+      {{ monthlyTransactionsCtrl.convert(month.income) }}
+    </div>
+    <div class="column">
+      {{ monthlyTransactionsCtrl.convert(month.spent) }}
+    </div>
+    <div class="column">
+      {{ monthlyTransactionsCtrl.convert(month.income + month.spent) }}
+    </div>
+  </div>
+</section>

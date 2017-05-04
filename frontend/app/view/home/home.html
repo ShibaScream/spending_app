@@ -1,3 +1,8 @@
 <section class="home">
-  <h2>{{ homeCtrl.title }}</h2>
+  <current-month
+    income="homeCtrl.currentMonthIncome"
+    spent="homeCtrl.currentMonthSpent">
+  </current-month>
+  <monthly-averages transactions="homeCtrl.transactions"></monthly-averages>
+  <monthly-transactions transactions="homeCtrl.transactions"></monthly-transactions>
 </section>

@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+}
+
+.column {
+  width: 25%;
+}
+
+.column:not(:first-child) {
+  text-align: right;
+}

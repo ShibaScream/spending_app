@@ -17,16 +17,16 @@ describe('aggregator library', function () {
       })
     })
     it('should show correct income amount', function () {
-      expect(results.monthlyTotals['2014-10'].income).to.equal(17081500 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-10'].income).to.equal(17081500)
     })
     it('should show correct spent amount', function () {
-      expect(results.monthlyTotals['2014-10'].spent).to.equal(-133300 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-10'].spent).to.equal(-133300)
     })
     it('should show correct average income', function () {
-      expect(results.average.income).to.equal(17081500 / Math.pow(10, 4))
+      expect(results.average.income).to.equal(17081500)
     })
     it('should show correct average spent', function () {
-      expect(results.average.spent).to.equal(-133300 / Math.pow(10, 4))
+      expect(results.average.spent).to.equal(-133300)
     })
   })
 
@@ -40,22 +40,22 @@ describe('aggregator library', function () {
       })
     })
     it('should show correct income amount for 2014-10', function () {
-      expect(results.monthlyTotals['2014-10'].income).to.equal(17081500 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-10'].income).to.equal(17081500)
     })
     it('should show correct spent amount for 2014-10', function () {
-      expect(results.monthlyTotals['2014-10'].spent).to.equal(-133300 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-10'].spent).to.equal(-133300)
     })
     it('should show correct income amount for 2014-11', function () {
-      expect(results.monthlyTotals['2014-11'].income).to.equal(22038000 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-11'].income).to.equal(22038000)
     })
     it('should show correct spent amount for 2014-11', function () {
-      expect(results.monthlyTotals['2014-11'].spent).to.equal(-5274400 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-11'].spent).to.equal(-5274400)
     })
     it('should show correct average income', function () {
-      expect(results.average.income).to.equal(19559750 / Math.pow(10, 4))
+      expect(results.average.income).to.equal(19559750)
     })
     it('should show correct average spent', function () {
-      expect(results.average.spent).to.equal(-2703850 / Math.pow(10, 4))
+      expect(results.average.spent).to.equal(-2703850)
     })
   })
 
@@ -69,18 +69,18 @@ describe('aggregator library', function () {
       })
     })
     it('should show correct donut amount for 2014-10', function () {
-      expect(results.monthlyTotals['2014-10'].totalsByCategory.donuts).to.equal(-99000 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-10'].totalsByCategory.donuts).to.equal(-99000)
     })
     it('should show correct donut amount for 2014-11', function () {
-      expect(results.monthlyTotals['2014-11'].totalsByCategory.donuts).to.equal(-79900 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-11'].totalsByCategory.donuts).to.equal(-79900)
     })
     it('should show correct CC payment amounts for 2014-10', function () {
       expect(results.monthlyTotals['2014-10'].totalsByCategory.creditCard.debit).to.equal(0)
       expect(results.monthlyTotals['2014-10'].totalsByCategory.creditCard.credit).to.equal(0)
     })
     it('should show correct CC payment amounts for 2014-11', function () {
-      expect(results.monthlyTotals['2014-11'].totalsByCategory.creditCard.debit).to.equal(-5194500 / Math.pow(10, 4))
-      expect(results.monthlyTotals['2014-11'].totalsByCategory.creditCard.credit).to.equal(5194500 / Math.pow(10, 4))
+      expect(results.monthlyTotals['2014-11'].totalsByCategory.creditCard.debit).to.equal(-5194500)
+      expect(results.monthlyTotals['2014-11'].totalsByCategory.creditCard.credit).to.equal(5194500)
     })
   })
 

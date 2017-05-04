@@ -1,7 +1,5 @@
 'use strict'
 
-const DOLLAR_CONVERSION = Math.pow(10, 4)
-
 module.exports = (transactionArray = []) => {
   return new Promise( (resolve, reject) => {
     try {
@@ -53,23 +51,17 @@ module.exports = (transactionArray = []) => {
 
       })
 
-      // TODO: POSSIBLY MOVE AVERAGING TO FRONTEND?? 
+      // TODO: POSSIBLY MOVE AVERAGING TO FRONTEND??
       //       WOULD ALLOW FOR CALCULATING ON THE FLY WITH FILTERING
-      // TODO: MOVE DOLLAR_CONVERSION TO FRONTEND CODE
       let dates = Object.keys(aggregate.monthlyTotals)
       dates.forEach( date => {
         let month = aggregate.monthlyTotals[date]
         aggregate.average.income += month.income
         aggregate.average.spent += month.spent
-        month.income /= DOLLAR_CONVERSION
-        month.spent /= DOLLAR_CONVERSION
-        month.totalsByCategory.creditCard.debit /= DOLLAR_CONVERSION
-        month.totalsByCategory.creditCard.credit /= DOLLAR_CONVERSION
-        month.totalsByCategory.donuts /= DOLLAR_CONVERSION
       })
 
-      aggregate.average.income = (aggregate.average.income / dates.length) / DOLLAR_CONVERSION
-      aggregate.average.spent = (aggregate.average.spent / dates.length) / DOLLAR_CONVERSION
+      aggregate.average.income = aggregate.average.income / dates.length
+      aggregate.average.spent = aggregate.average.spent / dates.length
 
       return resolve(aggregate)
     } catch (error) {
