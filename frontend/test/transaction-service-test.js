@@ -2,6 +2,22 @@
 
 const token = 'fakeJWT'
 const URL = `${__API_URL__}/api/v1`
+const fakeData = {
+  average: {
+    income: 0,
+    spent: 0
+  },
+  monthlyTotals: {
+    month1: {
+      income: 0,
+      spent: 0
+    },
+    month2: {
+      income: 0,
+      spent: 0
+    }
+  }
+}
 
 describe('transaction service tests', function() {
   beforeEach(() => {
@@ -28,7 +44,7 @@ describe('transaction service tests', function() {
       }
       this.$httpBackend
         .expectGET(`${URL}/overview`, headers)
-        .respond(200, {foo: 'bar'})
+        .respond(200, fakeData)
 
       this.transactionService.fetchTransactions()
     })

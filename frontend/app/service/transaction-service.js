@@ -24,7 +24,6 @@ function authService ($q, $log, $http, $window) {
       .then( res => {
         service.transactions = res.data
         service.transactions.monthsArray = convertMonthsObjectToArray(service.transactions.monthlyTotals)
-        $log.debug('here\'s the data:', service.transactions)
         return $q.resolve(service.transactions)
       })
       .catch(err => $q.reject(err))
