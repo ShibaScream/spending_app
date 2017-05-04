@@ -52,6 +52,7 @@ function authService ($q, $log, $http, $window) {
     // gotta give credit where credit due: http://www.jacklmoore.com/notes/rounding-in-javascript/
     // properly rounding numbers in javascript is fun
     if (centocents === null) return ''
+    if (isNaN(centocents)) return ''
     let amt = Number(Math.round((centocents / Math.pow(10, 4))+'e2')+'e-2')
     return (amt > 0 ? '$' : '-$') + Math.abs(amt)
   }
