@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test-be": "mocha backend/test",
+    "test-fe": "karma start --single-run",
     "build": "webpack --display-error-details",
     "watch": "webpack-dev-server --inline --hot",
     "start": "node backend/server.js"

@@ -1,0 +1,17 @@
+<section>
+  <h3>Your Monthly Average Spending</h3>
+  <div class="averages">
+    <div class="box">
+      {{ maCtrl.convert(maCtrl.transactions.average.income) }}
+      <h4>
+        Income
+      </h4>
+    </div>
+    <div class="box">
+      {{ maCtrl.convert(maCtrl.transactions.average.spent) }}
+      <h4>
+        Spent
+      </h4>
+    </div>
+  </div>
+</section>

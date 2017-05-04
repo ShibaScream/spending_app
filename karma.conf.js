@@ -17,8 +17,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/entry.js',
-      'test/**/*-test.js',
+      'frontend/app/entry.js',
+      'frontend/test/**/*-test.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/babel-polyfill/browser.js'
     ],
@@ -30,8 +30,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/**/*-test.js': ['webpack'],
-      'app/entry.js': ['webpack'],
+      'frontend/test/**/*-test.js': ['webpack'],
+      'frontend/app/entry.js': ['webpack'],
     },
 
     // test results reporter to use
@@ -54,7 +54,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Chrome_without_security', 'PhantomJS'],
+    browsers: ['PhantomJS'],
 
     // https://github.com/karma-runner/karma-chrome-launcher
     customLaunchers: {
