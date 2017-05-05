@@ -31,11 +31,11 @@ The backend also keeps to this by using modules and separating out the code into
 First, you will notice a few tests were written, but this solution has by no means complete test coverage. Not even close. I ran out of time to do all the testing I would usually do, but I at least wanted to demonstrate a cognizance of testing, particularly unit testing. In line with this code being extensible, the component-based architecture also allows for easy unit testing.
 
 You can run the current few tests with these commands:
-+ *Test the Backend*
+**Test the Backend**
 ```
 yarn test-be
 ```
-+ *Test the Frontend*
+**Test the Frontend**
 ```
 yarn test-fe
 ```
