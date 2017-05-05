@@ -20,7 +20,7 @@ Also just as in important, I kept in mind three things when crafting my solution
 + Testability
 
 ### Readability
-I use `eslint` across my code and strive for consistent styling. I aim to have my code meet the standards of the Clean Code book, although I know there is room for improvement.
+I used `eslint` across my code and strive for consistent styling. I aimed to have my code meet the standards of the Clean Code book, although I know there is room for improvement.
 
 ### Extensibility
 Particularly for the frontend, I wanted to demonstrate that this code was easily and quickly extensible to meet any new requirements. I used a component-based architecture for my AngularJS code which allows elements to be easily re-used and new elements to be quickly added with the least amount of editing to previously written code.
@@ -31,11 +31,11 @@ The backend also keeps to this by using modules and separating out the code into
 First, you will notice a few tests were written, but this solution has by no means complete test coverage. Not even close. I ran out of time to do all the testing I would usually do, but I at least wanted to demonstrate a cognizance of testing, particularly unit testing. In line with this code being extensible, the component-based architecture also allows for easy unit testing.
 
 You can run the current few tests with these commands:
-+*Test the Backend*
++ *Test the Backend*
 ```
 yarn test-be
 ```
-+*Test the Frontend*
++ *Test the Frontend*
 ```
 yarn test-fe
 ```
@@ -46,12 +46,12 @@ You may notice some references to JSON web tokens, bearer and basic auth, etc. I
 ## Let's Run This!
 To get started, clone the repo to your local drive. I am using yarn instead of npm, but using npm shouldn't be an issue (usually...until it is).
 
-I also am using a .env file to handle variables such as the API and AUTH tokens. You can add these directly into your environmental variables, but I highly recommend using a .env. So, from the root of your clone repo:
+I also am using a .env file to handle variables such as the API and AUTH tokens. You can add these directly into your environmental variables, but I highly recommend using a .env. So, in the root of your cloned repo, run this command:
 ```
 touch .env
 ```
 
-In the .env file, add the following:
+In the newly created .env file, add the following:
 ```
 API_TOKEN=XXX
 USER_ID=XXX
@@ -60,7 +60,7 @@ LEVEL_URL=https://2016.api.levelmoney.com/api/v2/core
 BACKEND_PORT=3000
 API_URL=http://localhost
 ```
-Replacing the `XXX` with the appropriate variables from the API.
+Replace `XXX` with the appropriate variables from the API documentation.
 
 For the sake of simplicity (and to avoid any unforeseen Webpack snafus), I added the build files to the git repository, although I usually wouldn't do that. If you do want to build my project from scratch, feel free to using the following command:
 ```
