@@ -1,23 +1,31 @@
 <section>
-  <h3>Current Month</h3>
+  <h3>{{ cmCtrl.header }}</h3>
   <div class="centered_items">
-    <div class="averages">
-      <div class="box">
-        {{ cmCtrl.convert(cmCtrl.income) }}
-        <h4>
-          Income
-        </h4>
+    <div class="container">
+      <div class="item centered_text">
+        <p class="number"
+          ng-class="{negative: ((cmCtrl.displayIncome + cmCtrl.displaySpent) <= 0)}">
+          {{ cmCtrl.convert(cmCtrl.displayIncome + cmCtrl.displaySpent) }}
+        </p>
+        <h4>Balance</h4>
       </div>
-      <div class="box">
-        {{ cmCtrl.convert(cmCtrl.spent) }}
-        <h4>
-          Spent
-        </h4>
+    </div>
+    <div class="container">
+      <div class="item centered_text">
+        <p class="number" ng-class="{negative: (cmCtrl.displayIncome <= 0)}">
+          {{ cmCtrl.convert(cmCtrl.displayIncome) }}
+        </p>
+        <h4>Income</h4>
+      </div>
+      <div class="item centered_text">
+        <p class="number" ng-class="{negative: (cmCtrl.displaySpent <= 0)}">
+          {{ cmCtrl.convert(cmCtrl.displaySpent) }}
+        </p>
+        <h4>Spent</h4>
       </div>
     </div>
     <div class="button_group">
-      <button ng-click="!cmCtrl.showProjected">See Projected</button>
+      <button ng-click="cmCtrl.showProjected()">{{ cmCtrl.buttonText }}</button>
     </div>
   </div>
-  <projected ng-show="cmCtrl.showProjected"></projected>
 </section>

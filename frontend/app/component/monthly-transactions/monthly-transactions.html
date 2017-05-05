@@ -7,19 +7,27 @@
     <div class="column"><h4>Balance</h4></div>
   </div>
   <div
-    ng-repeat="month in monthlyTransactionsCtrl.transactions.monthsArray | orderBy : 'date' : true"
+    ng-repeat="month in mtCtrl.transactions.monthsArray"
     class="row">
     <div class="column">
-      {{ month.date }}
+      <p>
+        {{ month.date }}
+      </p>
     </div>
     <div class="column">
-      {{ monthlyTransactionsCtrl.convert(month.income) }}
+      <p class="number" ng-class="{negative: (month.income <= 0)}">
+        {{ mtCtrl.convert(month.income) }}
+      </p>
     </div>
     <div class="column">
-      {{ monthlyTransactionsCtrl.convert(month.spent) }}
+      <p class="number" ng-class="{negative: (month.spent <= 0)}">
+        {{ mtCtrl.convert(month.spent) }}
+      </p>
     </div>
     <div class="column">
-      {{ monthlyTransactionsCtrl.convert(month.income + month.spent) }}
+      <p class="number" ng-class="{negative: ((month.income + month.spent) <= 0)}">
+        {{ mtCtrl.convert(month.income + month.spent) }}
+      </p>
     </div>
   </div>
 </section>

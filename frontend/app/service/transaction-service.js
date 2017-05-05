@@ -1,15 +1,16 @@
 'use strict'
 
-module.exports = ['$q', '$log', '$http', '$window', authService]
+module.exports = ['$q', '$log', '$http', '$window', 'categoryFilter', 'orderByFilter', authService]
 
-function authService ($q, $log, $http, $window) {
+function authService ($q, $log, $http, $window, categoryFilter, orderByFilter) {
   let service = {}
   let token = null
+  let today = new Date()
+  let dateString = `${today.getFullYear()}-${('0' + (today.getMonth() + 1)).slice(-2)}`
   service.transactions = {}
   service.projected = {}
 
   service.fetchTransactions = function () {
-    $log.debug('called fetchTransactions()')
     // typically would fetch auth token here but skipping that step
     token = 'fakeJWT'
     let url = `${__API_URL__}/api/v1/overview`
@@ -23,7 +24,7 @@ function authService ($q, $log, $http, $window) {
       .get(url, config)
       .then( res => {
         service.transactions = res.data
-        service.transactions.monthsArray = convertMonthsObjectToArray(service.transactions.monthlyTotals)
+        service.transactions.monthsArray = orderByFilter(convertMonthsObjectToArray(service.transactions.monthlyTotals), 'date', true)
         return $q.resolve(service.transactions)
       })
       .catch(err => $q.reject(err))
@@ -42,10 +43,25 @@ function authService ($q, $log, $http, $window) {
     return $http
       .get(url, config)
       .then( res => {
-        service.projected = res.data
+        service.projected = res.data.monthlyTotals[dateString]
         return $q.resolve(service.projected)
       })
       .catch(err => $q.reject(err))
+  }
+
+  service.filterTransactionsByCategory = function (hideDonuts, hideCC) {
+    return $q((resolve, reject) => {
+      try {
+        $log.debug(service.transactions)
+        let result = {
+          monthlyTotals: service.transactions.monthlyTotals,
+          monthsArray: categoryFilter(service.transactions.monthsArray, hideDonuts, hideCC),
+        }
+        resolve(result)
+      } catch (e) {
+        reject(e)
+      }
+    })
   }
 
   service.convertToDollarsString = function (centocents) {
@@ -54,7 +70,7 @@ function authService ($q, $log, $http, $window) {
     if (centocents === null) return ''
     if (isNaN(centocents)) return ''
     let amt = Number(Math.round((centocents / Math.pow(10, 4))+'e2')+'e-2')
-    return (amt > 0 ? '$' : '-$') + Math.abs(amt)
+    return (amt >= 0 ? '$' : '-$') + Math.abs(amt)
   }
 
   function convertMonthsObjectToArray (object) {

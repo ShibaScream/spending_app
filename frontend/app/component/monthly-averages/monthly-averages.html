@@ -1,17 +1,28 @@
 <section>
-  <h3>Your Monthly Average Spending</h3>
-  <div class="averages">
-    <div class="box">
-      {{ maCtrl.convert(maCtrl.averages.income) }}
-      <h4>
-        Income
-      </h4>
+  <h3>Average Monthly Spending</h3>
+  <div class="centered_items">
+    <div class="container">
+      <div class="item centered_text">
+        <p class="number"
+          ng-class="{negative: ((maCtrl.averages.income + maCtrl.averages.spent) <= 0)}">
+          {{ maCtrl.convert(maCtrl.averages.income + maCtrl.averages.spent) }}
+        </p>
+        <h4>Balance</h4>
+      </div>
     </div>
-    <div class="box">
-      {{ maCtrl.convert(maCtrl.averages.spent) }}
-      <h4>
-        Spent
-      </h4>
+    <div class="container">
+      <div class="item centered_text">
+        <p class="number" ng-class="{negative: (maCtrl.averages.income <= 0)}">
+          {{ maCtrl.convert(maCtrl.averages.income) }}
+        </p>
+        <h4>Income</h4>
+      </div>
+      <div class="item centered_text">
+        <p class="number" ng-class="{negative: (maCtrl.averages.spent <= 0)}">
+          {{ maCtrl.convert(maCtrl.averages.spent) }}
+        </p>
+        <h4>Spent</h4>
+      </div>
     </div>
   </div>
 </section>

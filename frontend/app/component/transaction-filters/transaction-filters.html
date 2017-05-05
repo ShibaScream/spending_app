@@ -1,7 +1,23 @@
 <section>
   <h3>Filter Your Transactions</h3>
-  <div class="button_group">
-    <button ng-click="tfCtrl.hideDonuts">Filter Donut Transactions</button>
-    <button ng-click="tfCtrl.hideCC">Filter Credit Card Transactions</button>
+  <div class="container">
+    <div class="item">
+      <ul>
+        <li>
+          <input id="donuts"
+            type="checkbox"
+            ng-model="tfCtrl.donuts"
+            ng-change="tfCtrl.filterDonuts()" />
+          <label for="donuts">Hide donut transactions</label>
+        </li>
+        <li>
+          <input id="cc"
+            type="checkbox"
+            ng-model="tfCtrl.cc"
+            ng-change="tfCtrl.filterCC()" />
+          <label for="cc">Hide Credit Card Payments</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

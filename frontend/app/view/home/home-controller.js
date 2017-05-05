@@ -4,18 +4,16 @@ require('./home.scss')
 
 module.exports = [
   '$log',
+  '$scope',
   'transactionService',
   HomeController
 ]
 
-function HomeController ($log, transactionService) {
+function HomeController ($log, $scope, transactionService) {
   let self = this
-  let today = new Date()
-  let dateString = `${today.getFullYear()}-${('0' + (today.getMonth() + 1)).slice(-2)}`
-
+  let hideDonuts = false
+  let hideCC = false
   self.transactions = {}
-  self.currentMonthIncome = 0
-  self.currentMonthSpent = 0
 
   self.fetchTransactions = () => {
     $log.debug('called home controller fetch')
@@ -23,10 +21,26 @@ function HomeController ($log, transactionService) {
       .fetchTransactions()
       .then( transactions => {
         self.transactions = transactions
-        self.currentMonthIncome = transactions.monthlyTotals[dateString].income
-        self.currentMonthSpent = transactions.monthlyTotals[dateString].spent
       })
       .catch(err => $log.debug(err))
+  }
+
+  self.filterDonuts = () => {
+    hideDonuts = !hideDonuts
+    transactionService
+      .filterTransactionsByCategory(hideDonuts, hideCC)
+      .then( transactions => {
+        self.transactions = transactions
+      })
+  }
+
+  self.filterCC = () => {
+    hideCC = !hideCC
+    transactionService
+      .filterTransactionsByCategory(hideDonuts, hideCC)
+      .then( transactions => {
+        self.transactions = transactions
+      })
   }
 
   self.fetchTransactions()
