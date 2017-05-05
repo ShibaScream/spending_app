@@ -2,12 +2,7 @@
 
 require('./home.scss')
 
-module.exports = [
-  '$log',
-  '$scope',
-  'transactionService',
-  HomeController
-]
+module.exports = ['$log', '$scope', 'transactionService', HomeController]
 
 function HomeController ($log, $scope, transactionService) {
   let self = this
@@ -16,7 +11,6 @@ function HomeController ($log, $scope, transactionService) {
   self.transactions = {}
 
   self.fetchTransactions = () => {
-    $log.debug('called home controller fetch')
     transactionService
       .fetchTransactions()
       .then( transactions => {

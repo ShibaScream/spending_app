@@ -38,7 +38,6 @@ function CurrentMonthController ($log, sumFilter, transactionService) {
       transactionService
         .fetchProjected()
         .then( totals => {
-          $log.debug(totals)
           self.projectedIncome = totals.income
           self.projectedSpent = totals.spent
           updateTotals()

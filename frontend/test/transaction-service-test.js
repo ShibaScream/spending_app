@@ -1,7 +1,11 @@
 'use strict'
 
+// this test coverage is by no means complete. 
+
 const token = 'fakeJWT'
 const URL = `${__API_URL__}/api/v1`
+let today = new Date()
+let dateString = `${today.getFullYear()}-${('0' + (today.getMonth() + 1)).slice(-2)}`
 const fakeData = {
   average: {
     income: 0,
@@ -17,6 +21,11 @@ const fakeData = {
       spent: 0
     }
   }
+}
+// this is because the fetchProjected is looking for the current month in the monthlyTotals object
+fakeData.monthlyTotals[dateString] = {
+  income: 0,
+  spent: 0
 }
 
 describe('transaction service tests', function() {
@@ -58,7 +67,7 @@ describe('transaction service tests', function() {
       }
       this.$httpBackend
         .expectGET(`${URL}/projected`, headers)
-        .respond(200, {foo: 'bar'})
+        .respond(200, fakeData)
 
       this.transactionService.fetchProjected()
     })

@@ -8,10 +8,18 @@ h1, h2, h3 {
 }
 
 h3 {
-  background: gray;
   padding: 1em;
-  color: white;
   margin: 0;
+  font-weight: 300;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: .7em;
+  margin: 0;
+  &.centered_header {
+    text-align: center;
+  }
 }
 
 ul, li {
@@ -21,4 +29,12 @@ ul, li {
 p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+label {
+    margin-right: 1em;
+}
+
+footer {
+  text-align: center;
 }

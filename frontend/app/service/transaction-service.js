@@ -52,7 +52,6 @@ function authService ($q, $log, $http, $window, categoryFilter, orderByFilter) {
   service.filterTransactionsByCategory = function (hideDonuts, hideCC) {
     return $q((resolve, reject) => {
       try {
-        $log.debug(service.transactions)
         let result = {
           monthlyTotals: service.transactions.monthlyTotals,
           monthsArray: categoryFilter(service.transactions.monthsArray, hideDonuts, hideCC),

@@ -1,7 +1,5 @@
 'use strict'
 
-require('./cc-transactions.scss')
-
 module.exports = {
   template: require('./cc-transactions.html'),
   controller: ['$log', 'transactionService', CCTransactionsController],

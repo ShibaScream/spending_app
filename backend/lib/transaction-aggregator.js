@@ -5,10 +5,6 @@ module.exports = (transactionArray = []) => {
     try {
       if (transactionArray.length === 0) throw Error('no transactions')
       let aggregate = {
-        average: {
-          income: 0,
-          spent: 0
-        },
         monthlyTotals: {}
       }
 
@@ -32,36 +28,20 @@ module.exports = (transactionArray = []) => {
 
         if (transaction.amount > 0) {
           month.income += transaction.amount
-
           if (isCCPayment(transaction.merchant)) {
             month.totalsByCategory.creditCard.credit += transaction.amount
           }
-
         } else {
           month.spent += transaction.amount
-
           if (isCCPayment(transaction.merchant)) {
             month.totalsByCategory.creditCard.debit += transaction.amount
           }
-
           if (isDonutPayment(transaction.merchant)) {
             month.totalsByCategory.donuts += transaction.amount
           }
         }
 
       })
-
-      // TODO: POSSIBLY MOVE AVERAGING TO FRONTEND??
-      //       WOULD ALLOW FOR CALCULATING ON THE FLY WITH FILTERING
-      let dates = Object.keys(aggregate.monthlyTotals)
-      dates.forEach( date => {
-        let month = aggregate.monthlyTotals[date]
-        aggregate.average.income += month.income
-        aggregate.average.spent += month.spent
-      })
-
-      aggregate.average.income = aggregate.average.income / dates.length
-      aggregate.average.spent = aggregate.average.spent / dates.length
 
       return resolve(aggregate)
     } catch (error) {
