@@ -63,6 +63,11 @@ API_URL=http://localhost
 ```
 Replace `XXX` with the appropriate variables from the API documentation.
 
+Now fetch the all the dependencies for this project with the oh so simple command:
+```
+yarn
+```
+
 For the sake of simplicity (and to avoid any unforeseen Webpack snafus), I added the build files to the git repository, although I usually wouldn't do that. If you do want to build my project from scratch, feel free to using the following command:
 ```
 yarn build
