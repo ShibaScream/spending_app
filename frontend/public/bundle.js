@@ -186,7 +186,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(37);
+	fixUrls = __webpack_require__(34);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -5597,7 +5597,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
 
 /***/ }),
 /* 12 */
@@ -5606,7 +5606,7 @@ var substr = 'ab'.substr(-1) === 'b'
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(29);
+var content = __webpack_require__(26);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -39014,10 +39014,8 @@ $provide.value("$locale", {
 "use strict";
 
 
-__webpack_require__(38);
-
 module.exports = {
-  template: __webpack_require__(31),
+  template: __webpack_require__(28),
   controller: ['$log', 'transactionService', CCTransactionsController],
   controllerAs: 'ccTransactionsCtrl',
   bindings: {
@@ -39037,10 +39035,10 @@ function CCTransactionsController($log, transactionService) {
 "use strict";
 
 
-__webpack_require__(39);
+__webpack_require__(35);
 
 module.exports = {
-  template: __webpack_require__(32),
+  template: __webpack_require__(29),
   controller: ['$log', 'sumFilter', 'transactionService', CurrentMonthController],
   controllerAs: 'cmCtrl',
   bindings: {
@@ -39100,10 +39098,8 @@ function CurrentMonthController($log, sumFilter, transactionService) {
 "use strict";
 
 
-__webpack_require__(40);
-
 module.exports = {
-  template: __webpack_require__(33),
+  template: __webpack_require__(30),
   controller: ['$log', '$scope', 'categoryFilter', 'averagesFilter', 'transactionService', MonthlyAveragesController],
   controllerAs: 'maCtrl',
   bindings: {
@@ -39137,10 +39133,8 @@ function MonthlyAveragesController($log, $scope, categoryFilter, averagesFilter,
 "use strict";
 
 
-__webpack_require__(41);
-
 module.exports = {
-  template: __webpack_require__(34),
+  template: __webpack_require__(31),
   controller: ['$log', '$scope', 'orderByFilter', 'categoryFilter', 'transactionService', MonthlyTransactionsController],
   controllerAs: 'mtCtrl',
   bindings: {
@@ -39170,7 +39164,7 @@ function routerConfig($stateProvider, $urlRouterProvider) {
   var states = [{
     name: 'home',
     url: '/home',
-    template: __webpack_require__(35),
+    template: __webpack_require__(32),
     controller: 'HomeController',
     controllerAs: 'homeCtrl'
   }];
@@ -39394,7 +39388,7 @@ function authService($q, $log, $http, $window, categoryFilter, orderByFilter) {
 "use strict";
 
 
-__webpack_require__(42);
+__webpack_require__(36);
 
 module.exports = ['$log', '$scope', 'transactionService', HomeController];
 
@@ -39438,7 +39432,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".centered_items {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n", ""]);
 
 // exports
 
@@ -39452,7 +39446,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".centered_items {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column; }\n", ""]);
+exports.push([module.i, "/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in\n *    IE on Windows Phone and in iOS.\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0; }\n\n/**\n * Add the correct display in IE 9-.\n */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in IE.\n */\nfigcaption,\nfigure,\nmain {\n  /* 1 */\n  display: block; }\n\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/**\n * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none; }\n\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * 1. Add the correct display in IE 9-.\n * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n */\ndetails,\nmenu {\n  display: block; }\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n\n/* Scripting\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\ncanvas {\n  display: inline-block; }\n\n/**\n * Add the correct display in IE.\n */\ntemplate {\n  display: none; }\n\n/* Hidden\n   ========================================================================== */\n/**\n * Add the correct display in IE 10-.\n */\n[hidden] {\n  display: none; }\n\nhtml, body {\n  font-family: 'Roboto', sans-serif;\n  overflow-y: scroll; }\n\nh1, h2, h3 {\n  text-align: center; }\n\nh3 {\n  padding: 1em;\n  margin: 0;\n  font-weight: 300; }\n\nh4 {\n  font-weight: 300;\n  font-size: .7em;\n  margin: 0; }\n  h4.centered_header {\n    text-align: center; }\n\nul, li {\n  list-style: none; }\n\np {\n  margin-top: 0;\n  margin-bottom: 0; }\n\nlabel {\n  margin-right: 1em; }\n\nfooter {\n  text-align: center; }\n\n.container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  overflow: hidden; }\n\n.item {\n  margin: 1em; }\n\n.centered_text {\n  text-align: center; }\n\n.button_group {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row; }\n\n.column {\n  margin: 1em; }\n  .column.two_column {\n    min-width: 41%; }\n  .column.four_column {\n    min-width: 22%; }\n\n.column:not(:first-child) {\n  text-align: right; }\n\n.box_header {\n  background: #0d47a1;\n  color: white; }\n\n.number {\n  color: green;\n  font-size: 1.1em; }\n  .number.negative {\n    color: red; }\n  .number.large_number {\n    font-size: 3em;\n    font-weight: 300; }\n\n.box {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto;\n  overflow: scroll;\n  border: 1px solid black;\n  border-radius: 10px;\n  margin: 1em; }\n  .box.small {\n    min-width: 30%;\n    max-height: 60vh;\n    min-height: 60vh; }\n  .box.large {\n    min-width: 96%; }\n\n@media (max-width: 1085px) {\n  .box.small {\n    min-width: 96%;\n    min-height: 45vh; }\n  .box.large {\n    min-width: 96%; }\n  .column.four_column {\n    min-width: 20%; } }\n", ""]);
 
 // exports
 
@@ -39466,85 +39460,43 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in\n *    IE on Windows Phone and in iOS.\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0; }\n\n/**\n * Add the correct display in IE 9-.\n */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in IE.\n */\nfigcaption,\nfigure,\nmain {\n  /* 1 */\n  display: block; }\n\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/**\n * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\naudio,\nvideo {\n  display: inline-block; }\n\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none; }\n\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * 1. Add the correct display in IE 9-.\n * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n */\ndetails,\nmenu {\n  display: block; }\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item; }\n\n/* Scripting\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\ncanvas {\n  display: inline-block; }\n\n/**\n * Add the correct display in IE.\n */\ntemplate {\n  display: none; }\n\n/* Hidden\n   ========================================================================== */\n/**\n * Add the correct display in IE 10-.\n */\n[hidden] {\n  display: none; }\n\nhtml, body {\n  font-family: 'Roboto', sans-serif;\n  overflow-y: scroll; }\n\nh1, h2, h3 {\n  text-align: center; }\n\nh3 {\n  padding: 1em;\n  margin: 0;\n  font-weight: 300; }\n\nh4 {\n  font-weight: 300;\n  font-size: .7em;\n  margin: 0; }\n  h4.centered_header {\n    text-align: center; }\n\nul, li {\n  list-style: none; }\n\np {\n  margin-top: 0;\n  margin-bottom: 0; }\n\nlabel {\n  margin-right: 1em; }\n\nfooter {\n  text-align: center; }\n\n.container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  overflow: hidden; }\n\n.item {\n  margin: 1em; }\n\n.centered_text {\n  text-align: center; }\n\n.button_group {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center; }\n\n.row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row; }\n\n.column {\n  margin: 1em; }\n  .column.two_column {\n    min-width: 41%; }\n  .column.four_column {\n    min-width: 22%; }\n\n.column:not(:first-child) {\n  text-align: right; }\n\n.box_header {\n  background: #0d47a1;\n  color: white; }\n\n.number {\n  color: green;\n  font-size: 1.1em; }\n  .number.negative {\n    color: red; }\n  .number.large_number {\n    font-size: 3em;\n    font-weight: 300; }\n\n.box {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto;\n  overflow: scroll;\n  border: 1px solid black;\n  border-radius: 10px;\n  margin: 1em; }\n  .box.small {\n    min-width: 30%;\n    max-height: 60vh;\n    min-height: 60vh; }\n  .box.large {\n    min-width: 96%; }\n\n@media (max-width: 1085px) {\n  .box.small {\n    min-width: 96%;\n    min-height: 45vh; }\n  .box.large {\n    min-width: 96%; }\n  .column.four_column {\n    min-width: 20%; } }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(undefined);
-// imports
-
-
-// module
 exports.push([module.i, ".home {\n  background: white;\n  padding: 2em; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 31 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = "<section>\n  <h3 class=\"box_header\">Monthly Credit Card Payments</h3>\n  <div class=\"row header\">\n    <div class=\"column two_column\"><h4>Month</h4></div>\n    <div class=\"column two_column\"><h4>Amount Paid</h4></div>\n  </div>\n  <div\n    ng-repeat=\"month in ccTransactionsCtrl.transactions.monthsArray | orderBy : 'date' : true\"\n    class=\"row\">\n    <div class=\"column two_column\">\n      <p>{{ month.date }}</p>\n    </div>\n    <div class=\"column two_column\">\n      <p class=\"number negative\">\n        {{ ccTransactionsCtrl.convert(month.totalsByCategory.creditCard.debit) }}\n      </p>\n    </div>\n  </div>\n</section>\n";
 
 /***/ }),
-/* 32 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = "<section>\n  <h3 class=\"box_header\">{{ cmCtrl.header }}</h3>\n  <div class=\"centered_items\">\n    <div class=\"container\">\n      <div class=\"item centered_text\">\n        <p class=\"number large_number\"\n          ng-class=\"{negative: ((cmCtrl.displayIncome + cmCtrl.displaySpent) <= 0)}\">\n          {{ cmCtrl.convert(cmCtrl.displayIncome + cmCtrl.displaySpent) }}\n        </p>\n        <h4 class=\"centered_header\">Balance</h4>\n      </div>\n    </div>\n    <div class=\"container\">\n      <div class=\"item centered_text\">\n        <p class=\"number\" ng-class=\"{negative: (cmCtrl.displayIncome <= 0)}\">\n          {{ cmCtrl.convert(cmCtrl.displayIncome) }}\n        </p>\n        <h4 class=\"centered_header\">Income</h4>\n      </div>\n      <div class=\"item centered_text\">\n        <p class=\"number\" ng-class=\"{negative: (cmCtrl.displaySpent <= 0)}\">\n          {{ cmCtrl.convert(cmCtrl.displaySpent) }}\n        </p>\n        <h4 class=\"centered_header\">Spent</h4>\n      </div>\n    </div>\n    <div class=\"button_group\">\n      <button ng-click=\"cmCtrl.showProjected()\">{{ cmCtrl.buttonText }}</button>\n    </div>\n  </div>\n</section>\n";
 
 /***/ }),
-/* 33 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = "<section>\n  <h3 class=\"box_header\">Average Monthly Spending</h3>\n  <div class=\"centered_items\">\n    <div class=\"container\">\n      <div class=\"item centered_text\">\n        <p class=\"number large_number\"\n          ng-class=\"{negative: ((maCtrl.averages.income + maCtrl.averages.spent) <= 0)}\">\n          {{ maCtrl.convert(maCtrl.averages.income + maCtrl.averages.spent) }}\n        </p>\n        <h4 class=\"centered_header\">Balance</h4>\n      </div>\n    </div>\n    <div class=\"container\">\n      <div class=\"item centered_text\">\n        <p class=\"number\" ng-class=\"{negative: (maCtrl.averages.income <= 0)}\">\n          {{ maCtrl.convert(maCtrl.averages.income) }}\n        </p>\n        <h4 class=\"centered_header\">Income</h4>\n      </div>\n      <div class=\"item centered_text\">\n        <p class=\"number\" ng-class=\"{negative: (maCtrl.averages.spent <= 0)}\">\n          {{ maCtrl.convert(maCtrl.averages.spent) }}\n        </p>\n        <h4 class=\"centered_header\">Spent</h4>\n      </div>\n    </div>\n  </div>\n</section>\n";
 
 /***/ }),
-/* 34 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = "<section>\n  <h3 class=\"box_header\">Monthly Transactions View</h3>\n  <div class=\"row header\">\n    <div class=\"column four_column\"><h4>Month</h4></div>\n    <div class=\"column four_column\"><h4>Income</h4></div>\n    <div class=\"column four_column\"><h4>Spent</h4></div>\n    <div class=\"column four_column\"><h4>Balance</h4></div>\n  </div>\n  <div\n    ng-repeat=\"month in mtCtrl.transactions.monthsArray\"\n    class=\"row\">\n    <div class=\"column four_column\">\n      <p>\n        {{ month.date }}\n      </p>\n    </div>\n    <div class=\"column four_column\">\n      <p class=\"number\" ng-class=\"{negative: (month.income <= 0)}\">\n        {{ mtCtrl.convert(month.income) }}\n      </p>\n    </div>\n    <div class=\"column four_column\">\n      <p class=\"number\" ng-class=\"{negative: (month.spent <= 0)}\">\n        {{ mtCtrl.convert(month.spent) }}\n      </p>\n    </div>\n    <div class=\"column four_column\">\n      <p class=\"number\" ng-class=\"{negative: ((month.income + month.spent) <= 0)}\">\n        {{ mtCtrl.convert(month.income + month.spent) }}\n      </p>\n    </div>\n  </div>\n</section>\n";
 
 /***/ }),
-/* 35 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = "<section class=\"home container\">\n  <section class=\"box large\">\n    <h3 class=\"box_header\">Filter Your Transactions</h3>\n    <div class=\"container\">\n      <div class=\"item\">\n          <input id=\"donuts\"\n            type=\"checkbox\"\n            ng-model=\"homeCtrl.donuts\"\n            ng-change=\"homeCtrl.filterDonuts()\" />\n          <label for=\"donuts\">Hide donut transactions</label>\n          <input id=\"cc\"\n            type=\"checkbox\"\n            ng-model=\"homeCtrl.cc\"\n            ng-change=\"homeCtrl.filterCC()\" />\n          <label for=\"cc\">Hide Credit Card Payments</label>\n      </div>\n    </div>\n  </section>\n  <current-month\n    transactions=\"homeCtrl.transactions\"\n    class=\"box small\">\n  </current-month>\n  <monthly-averages\n    transactions=\"homeCtrl.transactions\"\n    class=\"box small\">\n  </monthly-averages>\n  <cc-transactions\n    transactions=\"homeCtrl.transactions\"\n    class=\"box small\">\n  </cc-transactions>\n  <monthly-transactions\n    transactions=\"homeCtrl.transactions\"\n    class=\"box large\">\n  </monthly-transactions>\n</section>\n";
 
 /***/ }),
-/* 36 */
+/* 33 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -39734,7 +39686,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 37 */
+/* 34 */
 /***/ (function(module, exports) {
 
 
@@ -39829,44 +39781,13 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 38 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
 var content = __webpack_require__(25);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/postcss-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./cc-transactions.scss", function() {
-			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/postcss-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./cc-transactions.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(26);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -39891,75 +39812,13 @@ if(false) {
 }
 
 /***/ }),
-/* 40 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
 var content = __webpack_require__(27);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/postcss-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./monthly-averages.scss", function() {
-			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/postcss-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./monthly-averages.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(28);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/postcss-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./monthly-transactions.scss", function() {
-			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/postcss-loader/index.js!../../../../node_modules/sass-loader/lib/loader.js!./monthly-transactions.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(30);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
