@@ -1,7 +1,5 @@
 'use strict'
 
-require('./monthly-averages.scss')
-
 module.exports = {
   template: require('./monthly-averages.html'),
   controller: ['$log', '$scope', 'categoryFilter', 'averagesFilter','transactionService', MonthlyAveragesController],

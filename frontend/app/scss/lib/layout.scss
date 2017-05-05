@@ -29,18 +29,33 @@ $large-width: 96%;
 }
 
 .column {
-  min-width: 22%;
   margin: 1em;
+  &.two_column {
+    min-width: 41%;
+  }
+  &.four_column {
+    min-width: 22%;
+  }
 }
 
 .column:not(:first-child) {
   text-align: right;
 }
 
+.box_header {
+  background: #0d47a1;
+  color: white;
+}
+
 .number {
   color: green;
+  font-size: 1.1em;
   &.negative {
     color: red;
+  }
+  &.large_number {
+    font-size: 3em;
+    font-weight: 300;
   }
 }
 
@@ -57,5 +72,23 @@ $large-width: 96%;
   }
   &.large {
     min-width: $large-width;
+  }
+}
+
+@media (max-width: 1085px) {
+  .box {
+    &.small {
+      min-width: $large-width;
+      min-height: 45vh;
+    }
+    &.large {
+      min-width: $large-width;
+    }
+  }
+
+  .column {
+    &.four_column {
+      min-width: 20%;
+    }
   }
 }

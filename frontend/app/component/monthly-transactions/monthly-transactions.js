@@ -1,7 +1,5 @@
 'use strict'
 
-require('./monthly-transactions.scss')
-
 module.exports = {
   template: require('./monthly-transactions.html'),
   controller: ['$log', '$scope', 'orderByFilter', 'categoryFilter', 'transactionService', MonthlyTransactionsController],
