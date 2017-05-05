@@ -1,5 +1,7 @@
 'use strict'
 
+// this testing is by no means complete
+
 const chai = require('chai')
 const expect = chai.expect
 const aggregator = require('../lib/transaction-aggregator')
@@ -21,12 +23,6 @@ describe('aggregator library', function () {
     })
     it('should show correct spent amount', function () {
       expect(results.monthlyTotals['2014-10'].spent).to.equal(-133300)
-    })
-    it('should show correct average income', function () {
-      expect(results.average.income).to.equal(17081500)
-    })
-    it('should show correct average spent', function () {
-      expect(results.average.spent).to.equal(-133300)
     })
   })
 
@@ -50,12 +46,6 @@ describe('aggregator library', function () {
     })
     it('should show correct spent amount for 2014-11', function () {
       expect(results.monthlyTotals['2014-11'].spent).to.equal(-5274400)
-    })
-    it('should show correct average income', function () {
-      expect(results.average.income).to.equal(19559750)
-    })
-    it('should show correct average spent', function () {
-      expect(results.average.spent).to.equal(-2703850)
     })
   })
 
