@@ -1,9 +1,35 @@
-<section class="home">
-  <transaction-filters></transaction-filters>
+<section class="home container">
+  <section class="box large">
+    <h3>Filter Your Transactions</h3>
+    <div class="container">
+      <div class="item">
+          <input id="donuts"
+            type="checkbox"
+            ng-model="homeCtrl.donuts"
+            ng-change="homeCtrl.filterDonuts()" />
+          <label for="donuts">Hide donut transactions</label>
+          <input id="cc"
+            type="checkbox"
+            ng-model="homeCtrl.cc"
+            ng-change="homeCtrl.filterCC()" />
+          <label for="cc">Hide Credit Card Payments</label>
+      </div>
+    </div>
+  </section>
   <current-month
-    income="homeCtrl.currentMonthIncome"
-    spent="homeCtrl.currentMonthSpent">
+    transactions="homeCtrl.transactions"
+    class="box small">
   </current-month>
-  <monthly-averages transactions="homeCtrl.transactions"></monthly-averages>
-  <monthly-transactions transactions="homeCtrl.transactions"></monthly-transactions>
+  <monthly-averages
+    transactions="homeCtrl.transactions"
+    class="box small">
+  </monthly-averages>
+  <cc-transactions
+    transactions="homeCtrl.transactions"
+    class="box small">
+  </cc-transactions>
+  <monthly-transactions
+    transactions="homeCtrl.transactions"
+    class="box large">
+  </monthly-transactions>
 </section>

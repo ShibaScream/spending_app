@@ -1,7 +1,24 @@
 html, body {
   font-family: 'Roboto', sans-serif;
+  overflow-y: scroll;
 }
 
 h1, h2, h3 {
   text-align: center;
+}
+
+h3 {
+  background: gray;
+  padding: 1em;
+  color: white;
+  margin: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
 }

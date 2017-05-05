@@ -1,0 +1,19 @@
+<section>
+  <h3>Monthly Credit Card Payments</h3>
+  <div class="row header">
+    <div class="column"><h4>Month</h4></div>
+    <div class="column"><h4>Amount Paid</h4></div>
+  </div>
+  <div
+    ng-repeat="month in ccTransactionsCtrl.transactions.monthsArray | orderBy : 'date' : true"
+    class="row">
+    <div class="column">
+      <p>{{ month.date }}</p>
+    </div>
+    <div class="column">
+      <p class="number negative">
+        {{ ccTransactionsCtrl.convert(month.totalsByCategory.creditCard.debit) }}
+      </p>
+    </div>
+  </div>
+</section>

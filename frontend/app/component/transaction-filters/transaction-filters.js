@@ -4,12 +4,20 @@ require('./transaction-filters.scss')
 
 module.exports = {
   template: require('./transaction-filters.html'),
-  controller: ['$log', '$scope', TransactionFiltersController],
+  controller: ['$log', '$scope', 'transactionService', TransactionFiltersController],
   controllerAs: 'tfCtrl'
 }
 
-function TransactionFiltersController ($log, $scope) {
+function TransactionFiltersController ($log, $scope, transactionService) {
   let self = this
-  self.hideDonuts = false
-  self.hideCC = false
+
+  self.filterDonuts = () => {
+    $log.debug('ngChange donuts')
+    $scope.$emit('filter donuts')
+  }
+
+  self.filterCC = () => {
+    $log.debug('ngChange cc')
+    $scope.$emit('filter cc')
+  }
 }
