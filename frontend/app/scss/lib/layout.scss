@@ -1,5 +1,5 @@
 $small-width: 30%;
-$large-width: 96%;
+$large-width: 95.4%;
 
 .container {
   display: flex;
@@ -61,10 +61,11 @@ $large-width: 96%;
 
 .box {
   flex: 0 0 auto;
-  overflow: scroll;
+  overflow: hidden;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 3px;
   margin: 1em;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   &.small {
     min-width: $small-width;
     max-height: 60vh;
@@ -73,6 +74,15 @@ $large-width: 96%;
   &.large {
     min-width: $large-width;
   }
+  &.scroll_box {
+    overflow: scroll;
+  }
+}
+
+.inner_box {
+  flex: 0 0 auto;
+  overflow: scroll;
+  max-height: 16em;
 }
 
 @media (max-width: 1085px) {

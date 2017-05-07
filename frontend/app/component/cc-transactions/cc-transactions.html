@@ -4,7 +4,8 @@
     <div class="column two_column"><h4>Month</h4></div>
     <div class="column two_column"><h4>Amount Paid</h4></div>
   </div>
-  <div
+  <div class="inner_box">
+    <div
     ng-repeat="month in ccTransactionsCtrl.transactions.monthsArray | orderBy : 'date' : true"
     class="row">
     <div class="column two_column">
@@ -15,5 +16,6 @@
         {{ ccTransactionsCtrl.convert(month.totalsByCategory.creditCard.debit) }}
       </p>
     </div>
+  </div>
   </div>
 </section>
