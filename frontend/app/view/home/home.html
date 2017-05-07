@@ -1,21 +1,25 @@
 <section class="home container">
-  <section class="box large">
-    <h3 class="box_header">Filter Your Transactions</h3>
-    <div class="container">
-      <div class="item">
+  <div class="box large filter">
+    <section>
+      <h3 class="box_header">Filter Your Transactions</h3>
+      <div class="container">
+        <div class="item">
           <input id="donuts"
-            type="checkbox"
-            ng-model="homeCtrl.donuts"
-            ng-change="homeCtrl.filterDonuts()" />
+          type="checkbox"
+          ng-model="homeCtrl.donuts"
+          ng-change="homeCtrl.filterDonuts()" />
           <label for="donuts">Hide donut transactions</label>
+        </div>
+        <div class="item">
           <input id="cc"
-            type="checkbox"
-            ng-model="homeCtrl.cc"
-            ng-change="homeCtrl.filterCC()" />
+          type="checkbox"
+          ng-model="homeCtrl.cc"
+          ng-change="homeCtrl.filterCC()" />
           <label for="cc">Hide Credit Card Payments</label>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
   <current-month
     transactions="homeCtrl.transactions"
     class="box small">
