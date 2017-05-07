@@ -1,5 +1,5 @@
-$small-width: 30%;
-$large-width: 95.4%;
+$small-width: 31%;
+$large-width: 96%;
 $full-width: 100%;
 
 .container {
@@ -37,7 +37,7 @@ $full-width: 100%;
     min-width: 41%;
   }
   &.four_column {
-    min-width: 22%;
+    min-width: 21.5%;
   }
 }
 
@@ -66,7 +66,7 @@ $full-width: 100%;
   overflow: hidden;
   border: 1px solid black;
   border-radius: 3px;
-  margin: 1em;
+  margin: .5em;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   &.small {
     min-width: $small-width;
@@ -87,7 +87,7 @@ $full-width: 100%;
   max-height: 13.6em;
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 960px) {
   .box {
     &.small {
       min-width: $full-width;
@@ -104,6 +104,9 @@ $full-width: 100%;
   }
 
   .column {
+    &.two_column {
+      min-width: 43%;
+    }
     &.four_column {
       min-width: 17%;
     }
