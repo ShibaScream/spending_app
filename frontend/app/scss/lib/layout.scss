@@ -1,5 +1,6 @@
 $small-width: 30%;
-$large-width: 96%;
+$large-width: 95.4%;
+$full-width: 100%;
 
 .container {
   display: flex;
@@ -25,7 +26,9 @@ $large-width: 96%;
 .row {
   display: flex;
   flex-direction: row;
-  // justify-content: space-between;
+  &:nth-child(odd) {
+    background: #f5f5f5;
+  }
 }
 
 .column {
@@ -49,7 +52,6 @@ $large-width: 96%;
 
 .number {
   color: green;
-  font-size: 1.1em;
   &.negative {
     color: red;
   }
@@ -61,34 +63,53 @@ $large-width: 96%;
 
 .box {
   flex: 0 0 auto;
-  overflow: scroll;
+  overflow: hidden;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 3px;
   margin: 1em;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   &.small {
     min-width: $small-width;
-    max-height: 60vh;
-    min-height: 60vh;
+    max-height: 20em;
+    min-height: 20em;
   }
   &.large {
     min-width: $large-width;
   }
+  &.scroll_box {
+    overflow: scroll;
+  }
+}
+
+.inner_box {
+  flex: 0 0 auto;
+  overflow: scroll;
+  max-height: 13.6em;
 }
 
 @media (max-width: 1085px) {
   .box {
     &.small {
-      min-width: $large-width;
-      min-height: 45vh;
+      min-width: $full-width;
+      max-width: $full-width;
     }
     &.large {
-      min-width: $large-width;
+      min-width: $full-width;
+      max-width: $full-width;
     }
+  }
+
+  .inner_box {
+    max-height: 14em;
   }
 
   .column {
     &.four_column {
-      min-width: 20%;
+      min-width: 17%;
     }
+  }
+
+  .row {
+    font-size: .8em;
   }
 }
