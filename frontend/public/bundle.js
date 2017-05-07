@@ -39254,7 +39254,6 @@ module.exports = function () {
 
 module.exports = function () {
   return function (monthsArray, filterDonuts, filterCC) {
-    console.log('category filter called with', filterDonuts, filterCC);
     if (angular.isUndefined(monthsArray)) return [];
     var result = monthsArray.map(function (month) {
       var filteredMonth = {
@@ -39272,7 +39271,6 @@ module.exports = function () {
       }
       return filteredMonth;
     });
-    console.log('result:', result);
     return result;
   };
 };
